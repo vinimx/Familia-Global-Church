@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Paleta de Cores Moderna */
+    --fundo: #1c1c1c; /* Preto Intenso */
+    --texto: #f8f8f8; /* Branco Gelo */
+    --cartao: #3a3a3a; /* Cinza Aveludado */
+    --cartao-texto: #f8f8f8;
+
+    --pop-up: #1c1c1c;
+    --pop-up-texto: #f8f8f8;
+
+    --primaria: #e7b25a; /* Amarelo Mostarda */
+    --primaria-texto: #1c1c1c;
+
+    --secundaria: #b8c7db; /* Azul Céu Opaco */
+    --secundaria-texto: #1c1c1c;
+
+    --suave: #3a3a3a;
+    --suave-texto: #9e9e9e; /* Cinza Médio */
+
+    --destaque: #b9a1d1; /* Lilás Moderno */
+    --destaque-texto: #1c1c1c;
+
+    --destrutivo: #d11a2a; /* Vermelho Intenso */
+    --destrutivo-texto: #f8f8f8;
+
+    --borda: #3a3a3a;
+    --campo: #262626;
+    --anel: #e7b25a;
+
+    --raio: 1rem;
+
+    /* Cores Estendidas */
+    --bege-claro: #e5d5c3; /* Bege Claro */
+    --rosa-claro: #f7c9da; /* Rosa Claro */
+    --cinza-aveludado: #3a3a3a;
+
+    /* Gradientes Modernos */
+    --gradiente-primaria: linear-gradient(135deg, #e7b25a, #b9a1d1);
+    --gradiente-secundaria: linear-gradient(180deg, #b8c7db, #f7c9da);
+    --gradiente-escuro: linear-gradient(180deg, #1c1c1c, #3a3a3a);
+
+    /* Glassmorphism */
+    --vidro-fundo: rgba(58, 58, 58, 0.1);
+    --vidro-borda: rgba(248, 248, 248, 0.1);
+    --vidro-sombra: 0 8px 32px rgba(28, 28, 28, 0.37);
+
+    /* Sombras Modernas */
+    --sombra-sm: 0 2px 8px rgba(28, 28, 28, 0.12);
+    --sombra-md: 0 4px 16px rgba(28, 28, 28, 0.15);
+    --sombra-lg: 0 8px 32px rgba(28, 28, 28, 0.2);
+    --sombra-brilho: 0 0 24px rgba(231, 178, 90, 0.3);
+
+    /* Transições */
+    --transicao-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transicao-rapida: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+body {
+  background-color: var(--fundo);
+  font-family: "Hanken Grotesk", sans-serif;
+}

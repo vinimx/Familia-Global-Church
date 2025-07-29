@@ -1,0 +1,80 @@
+/* Estilos customizados para o menu */
+header {
+  box-shadow: var(--sombra-md);
+  font-style: uppercase;
+}
+
+/* Animação suave para o menu mobile */
+#mobile-menu {
+  animation: fadeInDown 0.3s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeito de brilho nos botões de ação */
+button:hover {
+  filter: brightness(1.1);
+}
+
+/* Efeito de glassmorphism aprimorado */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Animação para os ícones do menu mobile */
+svg {
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover svg {
+  transform: scale(1.1);
+}
+
+/* Efeito hover aprimorado para links */
+nav a {
+  position: relative;
+  overflow: hidden;
+}
+
+nav a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primaria), var(--destaque));
+  transition: width 0.3s ease;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+/* Animação para o logo */
+.group:hover .transform {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Scroll behavior suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsividade aprimorada */
+@media (max-width: 768px) {
+  #mobile-menu {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}

@@ -1,0 +1,182 @@
+<header
+  class="sticky tracking-wider uppercase top-0 z-50 backdrop-blur-md bg-[var(--vidro-fundo)] border-b border-[var(--vidro-borda)] transition-all duration-300"
+  [class.shadow-lg]="rolagemAtiva"
+>
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a
+          routerLink="/"
+          class="flex items-center space-x-3 group"
+          (click)="fecharMenuMobile()"
+        >
+          <img
+            src="/images/global.png"
+            alt="Logo da Família Global Church"
+            class="h-12 w-12 rounded-md object-contain transition-transform duration-300 group-hover:scale-110"
+            loading="lazy"
+          />
+          <span class="text-[var(--texto)] font-semibold text-xl sm:block">
+            Família Global
+          </span>
+        </a>
+      </div>
+
+      <!-- Navegação Desktop -->
+      <div class="hidden lg:block">
+        <div class="ml-10 flex items-baseline space-x-8">
+          <a
+            href="/"
+            class="text-[var(--texto)] hover:text-[var(--primaria)] px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-[var(--vidro-fundo)] border border-transparent hover:border-[var(--vidro-borda)]"
+          >
+            Home
+          </a>
+          <a
+            href="/sobre"
+            class="text-[var(--texto)] hover:text-[var(--primaria)] px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-[var(--vidro-fundo)] border border-transparent hover:border-[var(--vidro-borda)]"
+          >
+            Sobre
+          </a>
+          <a
+            href="/missoes"
+            class="text-[var(--texto)] hover:text-[var(--primaria)] px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-[var(--vidro-fundo)] border border-transparent hover:border-[var(--vidro-borda)]"
+          >
+            Missões
+          </a>
+          <a
+            href="/mensagens"
+            class="text-[var(--texto)] hover:text-[var(--primaria)] px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-[var(--vidro-fundo)] border border-transparent hover:border-[var(--vidro-borda)]"
+          >
+            Mensagens
+          </a>
+          <a
+            href="/contato"
+            class="text-[var(--texto)] hover:text-[var(--primaria)] px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-[var(--vidro-fundo)] border border-transparent hover:border-[var(--vidro-borda)]"
+          >
+            Contato
+          </a>
+        </div>
+      </div>
+
+      <!-- Botões de ação -->
+      <div class="hidden lg:flex items-center space-x-3">
+        <button
+          type="button"
+          (click)="aoVivo()"
+          class="uppercase bg-gradient-to-r from-[var(--destrutivo)] to-red-600 text-[var(--destrutivo-texto)] px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:shadow-lg hover:shadow-red-500/25 hover:scale-105 transform focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+          [attr.aria-label]="'Assistir transmissão ao vivo'"
+        >
+          Ao Vivo
+        </button>
+        <button
+          type="button"
+          (click)="visiteNos()"
+          class="uppercase bg-gradient-to-r from-[var(--primaria)] to-[var(--destaque)] text-[var(--primaria-texto)] px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:shadow-lg hover:shadow-[var(--primaria)]/25 hover:scale-105 transform focus:outline-none focus:ring-2 focus:ring-[var(--primaria)] focus:ring-offset-2"
+          [attr.aria-label]="'Informações para visitar a igreja'"
+        >
+          Visite-nos
+        </button>
+      </div>
+
+      <!-- Botão do menu mobile -->
+      <div class="lg:hidden">
+        <button
+          type="button"
+          (click)="alternarMenuMobile()"
+          class="inline-flex items-center justify-center p-2 rounded-lg text-[var(--texto)] hover:text-[var(--primaria)] hover:bg-[var(--vidro-fundo)] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--anel)] transition-all duration-300"
+        >
+          <span class="sr-only">Menu</span>
+          <!-- Ícone do menu -->
+          <svg
+            *ngIf="!menuMobileAberto"
+            class="block h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+          <!-- Ícone X -->
+          <svg
+            *ngIf="menuMobileAberto"
+            class="block h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu mobile -->
+    <div *ngIf="menuMobileAberto" class="lg:hidden" id="menu-mobile">
+      <div
+        class="px-2 pt-2 pb-3 space-y-1 bg-[var(--vidro-fundo)] backdrop-blur-lg rounded-lg mt-2 border border-[var(--vidro-borda)]"
+      >
+        <a
+          href="/"
+          class="text-[var(--texto)] hover:text-[var(--primaria)] block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:bg-[var(--vidro-fundo)]"
+        >
+          Home
+        </a>
+        <a
+          href="/sobre"
+          class="text-[var(--texto)] hover:text-[var(--primaria)] block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:bg-[var(--vidro-fundo)]"
+        >
+          Sobre
+        </a>
+        <a
+          href="/missoes"
+          class="text-[var(--texto)] hover:text-[var(--primaria)] block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:bg-[var(--vidro-fundo)]"
+        >
+          Missões
+        </a>
+        <a
+          href="/mensagens"
+          class="text-[var(--texto)] hover:text-[var(--primaria)] block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:bg-[var(--vidro-fundo)]"
+        >
+          Mensagens
+        </a>
+        <a
+          href="/contato"
+          class="text-[var(--texto)] hover:text-[var(--primaria)] block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 hover:bg-[var(--vidro-fundo)]"
+        >
+          Contato
+        </a>
+
+        <!-- Botões de ação mobile -->
+        <div class="pt-4 pb-2 space-y-2">
+          <button
+            type="button"
+            (click)="aoVivo()"
+            class="w-full bg-gradient-to-r from-[var(--destrutivo)] to-red-600 text-[var(--destrutivo-texto)] px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:shadow-lg"
+          >
+            Assista ao Vivo
+          </button>
+          <button
+            type="button"
+            (click)="visiteNos()"
+            class="w-full bg-gradient-to-r from-[var(--primaria)] to-[var(--destaque)] text-[var(--primaria-texto)] px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:shadow-lg"
+          >
+            Visite-nos
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
