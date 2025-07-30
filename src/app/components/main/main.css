@@ -1,0 +1,226 @@
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.3),
+    0 0 40px rgba(231, 178, 90, 0.2);
+  letter-spacing: 0.1em;
+  background: linear-gradient(45deg, #ffffff, #f8f8f8, #e7b25a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animação de fade up para os cards e botões */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animação de fade in para elementos */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animação de pulse para ícones */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.btn-modern {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.btn-modern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.btn-modern:hover::before {
+  left: 100%;
+}
+
+.btn-modern:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25),
+    0 0 25px rgba(255, 255, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-modern:active {
+  transform: translateY(-1px) scale(0.98);
+  transition: all 0.1s ease;
+}
+
+/* Animação suave para ícones */
+.btn-modern mat-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-modern:hover mat-icon {
+  transform: scale(1.1) translateX(2px);
+}
+
+.btn-modern:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3),
+    0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsividade aprimorada para telas muito pequenas */
+@media (max-width: 374px) {
+  .btn-modern {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    min-width: 140px;
+  }
+
+  .btn-modern mat-icon {
+    font-size: 1rem;
+  }
+
+  .btn-modern span {
+    font-size: 0.75rem;
+  }
+}
+
+/* Otimizações para celulares pequenos */
+@media (max-width: 480px) {
+  .schedule-card {
+    margin: 0 0.5rem;
+  }
+
+  .action-buttons {
+    gap: 0.75rem;
+  }
+}
+
+/* Otimizações para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .schedule-card {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .btn-modern {
+    min-width: 200px;
+  }
+}
+
+/* Otimizações para desktop */
+@media (min-width: 1025px) {
+  .schedule-card {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .btn-modern:hover {
+    transform: translateY(-4px) scale(1.05);
+  }
+}
+
+.hero-text {
+  animation: fadeIn 1.2s ease-out 0.2s both;
+}
+
+.schedule-card {
+  animation: fadeUp 0.8s ease-out 0.4s both;
+}
+
+.action-buttons {
+  animation: fadeUp 0.8s ease-out 0.6s both;
+}
+
+/* Animação de entrada para os cards de horário */
+.schedule-card > div > div:nth-child(1) {
+  animation: fadeUp 0.6s ease-out 0.5s both;
+}
+
+.schedule-card > div > div:nth-child(3) {
+  animation: fadeUp 0.6s ease-out 0.7s both;
+}
+
+/* Efeito de hover aprimorado para cards de horário */
+.schedule-card > div > div {
+  transition: all 0.3s ease;
+}
+
+.schedule-card > div > div:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsividade das animações */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-marquee {
+    animation: none;
+    transform: none;
+  }
+}
+
+@media (max-width: 475px) {
+  .xs\:hidden {
+    display: none;
+  }
+
+  .xs\:inline {
+    display: none;
+  }
+}
+
+@media (min-width: 476px) {
+  .xs\:hidden {
+    display: inline;
+  }
+
+  .xs\:inline {
+    display: inline;
+  }
+}

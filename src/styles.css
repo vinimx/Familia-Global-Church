@@ -4,6 +4,7 @@
   :root {
     /* Paleta de Cores Moderna */
     --fundo: #1c1c1c; /* Preto Intenso */
+    --fundo-branco: #f2f2f2;
     --texto: #f8f8f8; /* Branco Gelo */
     --cartao: #3a3a3a; /* Cinza Aveludado */
     --cartao-texto: #f8f8f8;
@@ -63,3 +64,6 @@ body {
   background-color: var(--fundo);
   font-family: "Hanken Grotesk", sans-serif;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
